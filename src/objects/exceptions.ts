@@ -1,0 +1,4 @@
+export class ErrorNotFound extends Error { name = "Not Found"; message = "The requested resource could not be found."; code = 404 }
+export class ErrorBadRequest extends Error { name = "Bad Request"; message = "The request is malformed and won't be processed."; code = 400 }
+export class ErrorInternalServer extends Error { name = "Internal Server Error"; message = "Something on the server happened that made it impossible to resolve the request."; code = 500 }
+export class ErrorServiceUnavailable extends Error { name = "Service Unavailable"; message = "The service currently is not available."; code = 503 }

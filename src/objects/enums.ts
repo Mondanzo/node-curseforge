@@ -1,0 +1,46 @@
+export enum CoreStatus {
+    DRAFT = 1,
+    TEST = 2,
+    PENDING_REVIEW = 3,
+    REJECTED = 4,
+    APPROVED = 5,
+    LIVE = 6
+}
+
+export enum CoreApiStatus {
+    PRIVATE = 1,
+    PUBLIC = 2
+}
+
+export enum FileReleaseType {
+    RELEASE = 1,
+    BETA = 2,
+    ALPHA = 3
+}
+
+export enum FileStatus {
+    PROCESSING = 1,
+    CHANGES_REQUIRED = 2,
+    UNDER_REVIEW = 3,
+    APPROVED = 4,
+    REJECTED = 5,
+    MALWARE_DETECTED = 6,
+    DELETED = 7,
+    ARCHIVED = 8,
+    TESTING = 9,
+    RELEASED = 10,
+    READY_FOR_REVIEW = 11,
+    DEPRECATED = 12,
+    BAKING = 13,
+    AWAITING_PUBLISHING = 14,
+    FAILED_PUBLISHING = 155
+}
+
+export enum FileRelationType {
+    EMBEDDED_LIBRARY = 1,
+    OPTIONAL_DEPENDENCY = 2,
+    REQUIRED_DEPENDENCY = 3,
+    TOOL = 4,
+    INCOMPATIBLE = 5,
+    INCLUDE = 6
+}
