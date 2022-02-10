@@ -44,3 +44,40 @@ export enum FileRelationType {
     INCOMPATIBLE = 5,
     INCLUDE = 6
 }
+
+export enum ModsSearchSortField {
+    FEATURED = 1,
+    POPULARITY = 2,
+    LAST_UPDATED = 3,
+    NAME = 4,
+    AUTHOR = 5,
+    TOTAL_DOWNLOADS = 6,
+    CATEGORY = 7,
+    GAME_VERSION = 8
+}
+
+export enum ModStatus {
+    NEW = 1,
+    CHANGES_REQUIRED = 2,
+    UNDER_SOFT_REVIEW = 3,
+    APPROVED = 4,
+    REJECTED = 5,
+    CHANGES_MADE = 6,
+    INACTIVE = 7,
+    ABANDONED = 8,
+    DELETED = 9,
+    UNDER_REVIEW = 10
+}
+
+export enum ModLoaderType {
+    ANY = 0,
+    FORGE = 1,
+    CAULDRON = 2,
+    LITE_LOADER = 3,
+    FABRIC = 4
+}
+
+export enum FileHashAlgorithms {
+    SHA1 = 1,
+    MD5 = 2
+}

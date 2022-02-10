@@ -1,0 +1,8 @@
+node_modules/
+dist/
+
+
+# User Settings
+.vscode/
+
+*.user.config
