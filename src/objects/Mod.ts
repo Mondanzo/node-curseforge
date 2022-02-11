@@ -1,10 +1,10 @@
 import { Category, ModFile } from ".";
-import { Curseforge } from "..";
+import Curseforge from "..";
 import { ModStatus } from "./enums";
 import { CFObject } from "./interfaces";
 import { FileIndex, ModAsset, ModAuthor, ModLinks, Pagination, PagingOptions } from "./types";
 
-export class Mod extends CFObject {
+export default class Mod extends CFObject {
 
     public readonly id: number;
     public readonly gameId: number;

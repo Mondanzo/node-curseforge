@@ -1,8 +1,10 @@
-export * as types from "./types";
-export * as enums from "./enums";
-export * as exceptions from "./exceptions";
+import * as types from "./types";
+import * as enums from "./enums";
+import * as exceptions from "./exceptions";
 
-export * from "./Game";
-export * from "./ModFile";
-export * from "./Mod";
-export * from "./Category";
+import Game from "./Game";
+import ModFile from "./ModFile";
+import Mod from "./Mod";
+import Category from "./Category";
+
+export {Game, ModFile, Mod, Category, types, enums, exceptions}

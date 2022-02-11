@@ -1,7 +1,7 @@
-import { Curseforge } from "..";
+import Curseforge from "..";
 import { CFObject } from "./interfaces";
 
-export class Category extends CFObject {
+export default class Category extends CFObject {
     public readonly id: number;
     public readonly gameId: number;
     public readonly name: string;

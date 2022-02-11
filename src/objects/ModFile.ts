@@ -1,5 +1,5 @@
 import { Mod } from ".";
-import { Curseforge } from "..";
+import Curseforge from "..";
 import { FileHashAlgorithms, FileRelationType, FileReleaseType, FileStatus } from "./enums";
 import { CFObject } from "./interfaces";
 import { FileDependency, FileHash, FileModule, SortableGameVersion } from "./types";
@@ -8,7 +8,7 @@ import { PathLike, createWriteStream, createReadStream } from "fs";
 import { createHash } from "crypto";
 import { rejects } from "assert";
 
-export class ModFile extends CFObject {
+export default class ModFile extends CFObject {
     public readonly id: number;
     public readonly gameId: number;
     public readonly modId: number;
@@ -114,14 +114,26 @@ export class ModFile extends CFObject {
         });
     }
 
+    /**
+     * Download this [[ModFile]]
+     * @param path The path where the file should be saved.
+     * @param verify Should the downloaded files hash be checked?
+     * @returns the Promise resolves with true if download was successful and the hash fits (if verify is true.) returns false otherwise.
+     */
     public download(path: PathLike, verify: boolean = true): Promise<boolean> {
         return this._download(this.downloadUrl, path, verify);
     }
+
 
     public get_mod(): Promise<Mod> {
         return this._client.get_mod(this.modId);
     }
 
+    /**
+     * 
+     * @param relations The types to get. This is a filter list to make sure that only requested dependencies are downloaded.
+     * @returns a list of [[ModFile]] which got found as dependencies. Can be an empty array.
+     */
     public get_dependencies(relations: FileRelationType[] = [FileRelationType.REQUIRED_DEPENDENCY]): Promise<ModFile[]> {
         return new Promise(async (resolve, reject) => {
             let mods = [];
@@ -135,6 +147,10 @@ export class ModFile extends CFObject {
         });
     }
 
+    /**
+     * Get the changelog for this specific [[ModFile.]]
+     * @returns The changelog in html.
+     */
     public get_changelog(): Promise<string> {
         return this._client.get_file_changelog(this.modId, this.id);
     }

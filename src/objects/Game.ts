@@ -1,18 +1,48 @@
 import { GameAssets, GameVersionType, Pagination, PagingOptions, SearchOptions } from "./types";
 import { CoreStatus, CoreApiStatus } from "./enums";
-import { Curseforge } from "..";
+import Curseforge from "..";
 import { CFObject } from "./interfaces";
-import { Mod } from "./Mod";
+import { Mod } from ".";
 import { Category } from ".";
+import { cleanse } from "../utils";
 
-export class Game extends CFObject {
-    public readonly id: number = undefined;
-    public readonly name: string = undefined;
-    public readonly slug: string = undefined;
-    public readonly dateModified: Date = undefined;
-    public readonly assets: GameAssets = undefined;
-    public readonly status: CoreStatus = undefined;
-    public readonly apiStatus: CoreApiStatus = undefined;
+export default class Game extends CFObject {
+
+    /**
+     * The id of the game.
+     */
+    public readonly id: number;
+
+    /**
+     * The name of the game.
+     */
+    public readonly name: string;
+
+    /**
+     * The slug of the game.
+     * a slug is a string identifier.
+     */
+    public readonly slug: string;
+
+    /**
+     * the Date when the game got last modified. Does not include changes in the mods.
+     */
+    public readonly dateModified: Date;
+
+    /**
+     * Assets related to the game.
+     */
+    public readonly assets: GameAssets;
+
+    /**
+     * The game status.
+     */
+    public readonly status: CoreStatus;
+
+    /**
+     * The api status for the game.
+     */
+    public readonly apiStatus: CoreApiStatus;
 
     constructor(_client: Curseforge, data: any) {
         super(_client);
@@ -26,14 +56,31 @@ export class Game extends CFObject {
         this.apiStatus = data.apiStatus;
     }
 
-    public get_categories(classId?: number): Promise<Category[]> {
-        return this._client.get_categories(this.id, classId);
+    /**
+     * Get the categories for this game.
+     * @param classId Optional TopLevel id of the category to get from.
+     * @returns a list of categories.
+     */
+    public get_categories(classId?: number | Category): Promise<Category[]> {
+        return this._client.get_categories(this.id, cleanse(classId));
     }
 
+    /**
+     * Search for "mods" related to this game.
+     * Mods also by default includes things like Resource packs / mod packs / custom worlds. Make sure to use the proper Top-Level Category if you only wants to find game modifications.
+     * @param options Optional Options for searching and Paging.
+     * @returns a list of found [[Mod]] as well as a paging value for Pagination.
+     */
     public search_mods(options?: SearchOptions & PagingOptions): Promise<Mod[] & {paging: Pagination}> {
         return this._client.search_mods(this.id, options);
     }
 
+    /**
+     * 
+     * @param gameVersionType Optional game version type to look for.
+     * @param excludedMods a list of mods to not include.
+     * @returns an object with multiple lists of [[Mod]]
+     */
     public get_featured(gameVersionType?: number | GameVersionType, excludedMods?: number[]): Promise<{featured: Mod[], popular: Mod[], recentlyUpdated: Mod[]}> {
         return this._client.get_featured_mods(this.id, gameVersionType, excludedMods);
     }

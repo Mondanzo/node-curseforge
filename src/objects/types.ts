@@ -1,5 +1,4 @@
-import { ModFile } from ".";
-import { Category } from "./Category";
+import { ModFile, Category } from ".";
 import { FileHashAlgorithms, FileRelationType, FileReleaseType, ModLoaderType, ModsSearchSortField } from "./enums";
 
 export type GameAssets = {
