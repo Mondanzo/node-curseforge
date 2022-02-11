@@ -24,7 +24,7 @@ export default class Mod extends CFObject {
     public readonly logo: ModAsset;
     public readonly thumbnails: ModAsset[];
     public readonly mainFileId: number;
-    public readonly latestFiles: File[];
+    public readonly latestFiles: ModFile[];
     public readonly latestFilesIndexes: FileIndex[];
     public readonly dateCreated: Date;
     public readonly dateModified: Date;
