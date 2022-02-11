@@ -4,6 +4,8 @@
 
 ## Game.dateModified property
 
+the Date when the game got last modified. Does not include changes in the mods.
+
 <b>Signature:</b>
 
 ```typescript

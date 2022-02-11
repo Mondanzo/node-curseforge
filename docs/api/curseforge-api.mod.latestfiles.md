@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-readonly latestFiles: File[];
+readonly latestFiles: ModFile[];
 ```

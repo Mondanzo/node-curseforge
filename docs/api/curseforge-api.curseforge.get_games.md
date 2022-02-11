@@ -16,10 +16,12 @@ get_games(index?: number, pageSize?: number): Promise<Game[] & {
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  index | number |  |
-|  pageSize | number |  |
+|  index | number | Optional index to use for paging. |
+|  pageSize | number | Size to show per page. |
 
 <b>Returns:</b>
 
 Promise&lt;Game\[\] &amp; { paging: Pagination; }&gt;
+
+A Promise with a paging property filled with the Pagination.
 

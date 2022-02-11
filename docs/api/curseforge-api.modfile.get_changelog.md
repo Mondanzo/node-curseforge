@@ -4,6 +4,8 @@
 
 ## ModFile.get\_changelog() method
 
+Get the changelog for this specific \[\[ModFile.\]\]
+
 <b>Signature:</b>
 
 ```typescript
@@ -12,4 +14,6 @@ get_changelog(): Promise<string>;
 <b>Returns:</b>
 
 Promise&lt;string&gt;
+
+The changelog in html.
 

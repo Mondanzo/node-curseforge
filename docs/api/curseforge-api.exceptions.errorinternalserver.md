@@ -4,6 +4,8 @@
 
 ## Exceptions.ErrorInternalServer class
 
+Error getting thrown if the server processing request throws an error. This is not a client error.
+
 <b>Signature:</b>
 
 ```typescript

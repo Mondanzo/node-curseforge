@@ -4,6 +4,8 @@
 
 ## Game.assets property
 
+Assets related to the game.
+
 <b>Signature:</b>
 
 ```typescript

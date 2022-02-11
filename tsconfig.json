@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
         "moduleResolution": "Node",
+        "target": "es5",
+        "module": "CommonJS",
         "noImplicitAny": false,
-        "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
         "outDir": "dist",
         "emitDeclarationOnly": false,
-        "declaration": true
+        "declaration": true,
+        "declarationMap": true
     },
     "include": ["src/**/*"]
 }

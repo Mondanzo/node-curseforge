@@ -4,6 +4,8 @@
 
 ## Game.apiStatus property
 
+The api status for the game.
+
 <b>Signature:</b>
 
 ```typescript

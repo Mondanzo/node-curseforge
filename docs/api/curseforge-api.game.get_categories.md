@@ -4,6 +4,8 @@
 
 ## Game.get\_categories() method
 
+Get the categories for this game.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ get_categories(classId?: number | Category): Promise<Category[]>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  classId | number \| Category |  |
+|  classId | number \| Category | Optional TopLevel id of the category to get from. |
 
 <b>Returns:</b>
 
 Promise&lt;Category\[\]&gt;
+
+a list of categories.
 

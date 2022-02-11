@@ -14,9 +14,10 @@ get_game(game_id: number | string): Promise<Game>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  game\_id | number \| string |  |
+|  game\_id | number \| string | Game id or slug to use. |
 
 <b>Returns:</b>
 
 Promise&lt;Game&gt;
+
 

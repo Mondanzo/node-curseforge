@@ -18,10 +18,12 @@ get_featured(gameVersionType?: number | GameVersionType, excludedMods?: number[]
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  gameVersionType | number \| GameVersionType |  |
-|  excludedMods | number\[\] |  |
+|  gameVersionType | number \| GameVersionType | Optional game version type to look for. |
+|  excludedMods | number\[\] | a list of mods to not include. |
 
 <b>Returns:</b>
 
 Promise&lt;{ featured: Mod\[\]; popular: Mod\[\]; recentlyUpdated: Mod\[\]; }&gt;
+
+an object with multiple lists of \[\[Mod\]\]
 

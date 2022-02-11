@@ -4,6 +4,8 @@
 
 ## Game.status property
 
+The game status.
+
 <b>Signature:</b>
 
 ```typescript

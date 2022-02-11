@@ -6,6 +6,7 @@
   "repository": "https://github.com/Mondanzo/curseforge-api",
   "author": "Mondanzo",
   "license": "MIT",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "build-project": "tsc",
     "generate-docs": "api-extractor run --local && api-documenter markdown -i temp -o docs/api"

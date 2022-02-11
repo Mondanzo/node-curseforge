@@ -4,6 +4,8 @@
 
 ## Game.id property
 
+The id of the game.
+
 <b>Signature:</b>
 
 ```typescript

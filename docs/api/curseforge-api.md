@@ -8,11 +8,11 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [Category](./curseforge-api.category.md) |  |
+|  [Category](./curseforge-api.category.md) | Represents a Category from Curseforge. |
 |  [Curseforge](./curseforge-api.curseforge.md) |  |
-|  [Game](./curseforge-api.game.md) |  |
-|  [Mod](./curseforge-api.mod.md) |  |
-|  [ModFile](./curseforge-api.modfile.md) |  |
+|  [Game](./curseforge-api.game.md) | Represents a specific game from the CF-Core api. |
+|  [Mod](./curseforge-api.mod.md) | Class for working with a specific mod from the CF-Core api. |
+|  [ModFile](./curseforge-api.modfile.md) | Represents a single CF-Core file for a specific mod. |
 
 ## Namespaces
 

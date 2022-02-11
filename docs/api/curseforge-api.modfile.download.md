@@ -4,6 +4,8 @@
 
 ## ModFile.download() method
 
+Download this \[\[ModFile\]\]
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,10 +16,12 @@ download(path: PathLike, verify?: boolean): Promise<boolean>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  path | PathLike |  |
-|  verify | boolean |  |
+|  path | PathLike | The path where the file should be saved. |
+|  verify | boolean | Should the downloaded files hash be checked? |
 
 <b>Returns:</b>
 
 Promise&lt;boolean&gt;
+
+the Promise resolves with true if download was successful and the hash fits (if verify is true.) returns false otherwise.
 

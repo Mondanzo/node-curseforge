@@ -4,6 +4,8 @@
 
 ## Category class
 
+Represents a Category from Curseforge.
+
 <b>Signature:</b>
 
 ```typescript

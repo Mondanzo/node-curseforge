@@ -4,6 +4,8 @@
 
 ## Game.slug property
 
+The slug of the game. a slug is a string identifier.
+
 <b>Signature:</b>
 
 ```typescript

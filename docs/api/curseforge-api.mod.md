@@ -4,6 +4,8 @@
 
 ## Mod class
 
+Class for working with a specific mod from the CF-Core api.
+
 <b>Signature:</b>
 
 ```typescript
@@ -31,7 +33,7 @@ export default class Mod extends CFObject
 |  [gameId](./curseforge-api.mod.gameid.md) |  | number |  |
 |  [id](./curseforge-api.mod.id.md) |  | number |  |
 |  [isFeatured](./curseforge-api.mod.isfeatured.md) |  | boolean |  |
-|  [latestFiles](./curseforge-api.mod.latestfiles.md) |  | File\[\] |  |
+|  [latestFiles](./curseforge-api.mod.latestfiles.md) |  | ModFile\[\] |  |
 |  [latestFilesIndexes](./curseforge-api.mod.latestfilesindexes.md) |  | FileIndex\[\] |  |
 |  [links](./curseforge-api.mod.links.md) |  | ModLinks |  |
 |  [logo](./curseforge-api.mod.logo.md) |  | ModAsset |  |

@@ -14,9 +14,11 @@ get_dependencies(relations?: FileRelationType[]): Promise<ModFile[]>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  relations | FileRelationType\[\] |  |
+|  relations | FileRelationType\[\] | The types to get. This is a filter list to make sure that only requested dependencies are downloaded. |
 
 <b>Returns:</b>
 
 Promise&lt;ModFile\[\]&gt;
+
+a list of \[\[ModFile\]\] which got found as dependencies. Can be an empty array.
 

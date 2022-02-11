@@ -4,6 +4,8 @@
 
 ## Game.search\_mods() method
 
+Search for "mods" related to this game. Mods also by default includes things like Resource packs / mod packs / custom worlds. Make sure to use the proper Top-Level Category if you only wants to find game modifications.
+
 <b>Signature:</b>
 
 ```typescript
@@ -16,9 +18,11 @@ search_mods(options?: SearchOptions & PagingOptions): Promise<Mod[] & {
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | SearchOptions &amp; PagingOptions |  |
+|  options | SearchOptions &amp; PagingOptions | Optional Options for searching and Paging. |
 
 <b>Returns:</b>
 
 Promise&lt;Mod\[\] &amp; { paging: Pagination; }&gt;
+
+a list of found \[\[Mod\]\] as well as a paging value for Pagination.
 

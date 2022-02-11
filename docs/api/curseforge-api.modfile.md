@@ -4,6 +4,8 @@
 
 ## ModFile class
 
+Represents a single CF-Core file for a specific mod.
+
 <b>Signature:</b>
 
 ```typescript
@@ -49,8 +51,8 @@ export default class ModFile extends CFObject
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [download(path, verify)](./curseforge-api.modfile.download.md) |  |  |
-|  [get\_changelog()](./curseforge-api.modfile.get_changelog.md) |  |  |
+|  [download(path, verify)](./curseforge-api.modfile.download.md) |  | Download this \[\[ModFile\]\] |
+|  [get\_changelog()](./curseforge-api.modfile.get_changelog.md) |  | Get the changelog for this specific \[\[ModFile.\]\] |
 |  [get\_dependencies(relations)](./curseforge-api.modfile.get_dependencies.md) |  |  |
 |  [get\_mod()](./curseforge-api.modfile.get_mod.md) |  |  |
 

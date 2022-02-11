@@ -4,6 +4,8 @@
 
 ## Exceptions.ErrorNotFound class
 
+Error getting thrown if the requested resource could not be found.
+
 <b>Signature:</b>
 
 ```typescript

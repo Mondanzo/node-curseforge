@@ -4,6 +4,8 @@
 
 ## Exceptions.ErrorBadRequest class
 
+Error getting thrown if the request contains a malformed request body.
+
 <b>Signature:</b>
 
 ```typescript

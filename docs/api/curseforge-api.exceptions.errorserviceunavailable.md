@@ -4,6 +4,8 @@
 
 ## Exceptions.ErrorServiceUnavailable class
 
+Error getting thrown if the service isn't available at the current time.
+
 <b>Signature:</b>
 
 ```typescript

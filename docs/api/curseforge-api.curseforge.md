@@ -14,7 +14,7 @@ export default class Curseforge
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(token)](./curseforge-api.curseforge._constructor_.md) |  | Constructs a new instance of the <code>Curseforge</code> class |
+|  [(constructor)(token)](./curseforge-api.curseforge._constructor_.md) |  | Create a new curseforge client. |
 
 ## Methods
 

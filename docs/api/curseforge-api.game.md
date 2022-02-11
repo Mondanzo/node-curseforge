@@ -4,6 +4,8 @@
 
 ## Game class
 
+Represents a specific game from the CF-Core api.
+
 <b>Signature:</b>
 
 ```typescript
@@ -21,19 +23,19 @@ export default class Game extends CFObject
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [apiStatus](./curseforge-api.game.apistatus.md) |  | CoreApiStatus |  |
-|  [assets](./curseforge-api.game.assets.md) |  | GameAssets |  |
-|  [dateModified](./curseforge-api.game.datemodified.md) |  | Date |  |
-|  [id](./curseforge-api.game.id.md) |  | number |  |
-|  [name](./curseforge-api.game.name.md) |  | string |  |
-|  [slug](./curseforge-api.game.slug.md) |  | string |  |
-|  [status](./curseforge-api.game.status.md) |  | CoreStatus |  |
+|  [apiStatus](./curseforge-api.game.apistatus.md) |  | CoreApiStatus | The api status for the game. |
+|  [assets](./curseforge-api.game.assets.md) |  | GameAssets | Assets related to the game. |
+|  [dateModified](./curseforge-api.game.datemodified.md) |  | Date | the Date when the game got last modified. Does not include changes in the mods. |
+|  [id](./curseforge-api.game.id.md) |  | number | The id of the game. |
+|  [name](./curseforge-api.game.name.md) |  | string | The name of the game. |
+|  [slug](./curseforge-api.game.slug.md) |  | string | The slug of the game. a slug is a string identifier. |
+|  [status](./curseforge-api.game.status.md) |  | CoreStatus | The game status. |
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [get\_categories(classId)](./curseforge-api.game.get_categories.md) |  |  |
+|  [get\_categories(classId)](./curseforge-api.game.get_categories.md) |  | Get the categories for this game. |
 |  [get\_featured(gameVersionType, excludedMods)](./curseforge-api.game.get_featured.md) |  |  |
-|  [search\_mods(options)](./curseforge-api.game.search_mods.md) |  |  |
+|  [search\_mods(options)](./curseforge-api.game.search_mods.md) |  | Search for "mods" related to this game. Mods also by default includes things like Resource packs / mod packs / custom worlds. Make sure to use the proper Top-Level Category if you only wants to find game modifications. |
 

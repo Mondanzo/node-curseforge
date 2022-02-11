@@ -8,8 +8,8 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [ErrorBadRequest](./curseforge-api.exceptions.errorbadrequest.md) |  |
-|  [ErrorInternalServer](./curseforge-api.exceptions.errorinternalserver.md) |  |
-|  [ErrorNotFound](./curseforge-api.exceptions.errornotfound.md) |  |
-|  [ErrorServiceUnavailable](./curseforge-api.exceptions.errorserviceunavailable.md) |  |
+|  [ErrorBadRequest](./curseforge-api.exceptions.errorbadrequest.md) | Error getting thrown if the request contains a malformed request body. |
+|  [ErrorInternalServer](./curseforge-api.exceptions.errorinternalserver.md) | Error getting thrown if the server processing request throws an error. This is not a client error. |
+|  [ErrorNotFound](./curseforge-api.exceptions.errornotfound.md) | Error getting thrown if the requested resource could not be found. |
+|  [ErrorServiceUnavailable](./curseforge-api.exceptions.errorserviceunavailable.md) | Error getting thrown if the service isn't available at the current time. |
 

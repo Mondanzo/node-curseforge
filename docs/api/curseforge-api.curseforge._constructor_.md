@@ -4,7 +4,7 @@
 
 ## Curseforge.(constructor)
 
-Constructs a new instance of the `Curseforge` class
+Create a new curseforge client.
 
 <b>Signature:</b>
 
@@ -16,5 +16,5 @@ constructor(token: string);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  token | string |  |
+|  token | string | The API Token from Curseforge. You can receive one from https://console.curseforge.com/\#/api-keys |
 
