@@ -6,6 +6,9 @@ import { Mod } from ".";
 import { Category } from ".";
 import { cleanse } from "../utils";
 
+/**
+ * Represents a specific game from the CF-Core api.
+ */
 export default class Game extends CFObject {
 
     /**

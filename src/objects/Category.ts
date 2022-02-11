@@ -1,6 +1,9 @@
 import Curseforge from "..";
 import { CFObject } from "./interfaces";
 
+/**
+ * Represents a Category from Curseforge.
+ */
 export default class Category extends CFObject {
     public readonly id: number;
     public readonly gameId: number;
@@ -26,6 +29,4 @@ export default class Category extends CFObject {
         this.classId = data.classId;
         this.parentCategoryId = data.parentCategoryId;
     }
-
-
 }

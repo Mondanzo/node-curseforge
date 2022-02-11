@@ -4,6 +4,9 @@ import { ModStatus } from "./enums";
 import { CFObject } from "./interfaces";
 import { FileIndex, ModAsset, ModAuthor, ModLinks, Pagination, PagingOptions } from "./types";
 
+/**
+ * Class for working with a specific mod from the CF-Core api.
+ */
 export default class Mod extends CFObject {
 
     public readonly id: number;

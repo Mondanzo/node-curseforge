@@ -6,8 +6,10 @@ import { FileDependency, FileHash, FileModule, SortableGameVersion } from "./typ
 import * as https from "https";
 import { PathLike, createWriteStream, createReadStream } from "fs";
 import { createHash } from "crypto";
-import { rejects } from "assert";
 
+/**
+ * Represents a single CF-Core file for a specific mod.
+ */
 export default class ModFile extends CFObject {
     public readonly id: number;
     public readonly gameId: number;
