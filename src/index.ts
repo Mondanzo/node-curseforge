@@ -6,12 +6,25 @@ import { FingerprintFuzzyMatch, FingerprintMatchResult, FolderFingerprints, Game
 
 export {Game, Mod, Category, ModFile, types as Types, exceptions as Exceptions, enums as Enums};
 
+/**
+ * the default exported class of the package.
+ */
 export default class Curseforge {
 
+    /**
+     * @ignore
+     */
     private api_token: string;
-    private API_URL = new URL("https://api.curseforge.com/v1/");
-    private _game: undefined | Game = undefined;
 
+    /**
+     * @ignore
+     */
+    private API_URL = new URL("https://api.curseforge.com/v1/");
+
+    /**
+     * Set the token for this instance.
+     * @param token the CFCore token.
+     */
     public set_token(token: string): void {
         utils.set_option(token);
     }
@@ -22,9 +35,8 @@ export default class Curseforge {
     // []============================[]
 
     /**
-     * 
+     * Get a game specified by `game_id`
      * @param game_id Game id or slug to use.
-     * @returns 
      */
     public get_game(game_id: number | string): Promise<Game> {
         return new Promise(async (resolve, reject) => {
@@ -46,7 +58,7 @@ export default class Curseforge {
                 try {
                  while(_game == undefined){
                         let _games = await this.get_games();
-                        this._game = _games.find(g => {g.slug == game_id});
+                        _game = _games.find(g => {g.slug == game_id});
                         if(_game){
                             resolve(_game);
                             break;
@@ -63,7 +75,7 @@ export default class Curseforge {
     }
 
     /**
-     * 
+     * Get multiple available games.
      * @param index Optional index to use for paging.
      * @param pageSize Size to show per page.
      * @returns A Promise with a paging property filled with the Pagination.
@@ -92,6 +104,11 @@ export default class Curseforge {
         });
     }
 
+    /**
+     * Get the different game versions supported by CFCore.
+     * @param game Game to request the versions for.
+     * @returns Array of Game Versions
+     */
     public get_game_versions(game: number | Game): Promise<GameVersionsByType[]> {
         return new Promise(async (resolve, reject) => {
             let res = await utils.get(this.API_URL + "games/" + utils.cleanse(game) + "/versions");
@@ -110,6 +127,10 @@ export default class Curseforge {
         });
     }
 
+    
+    /**
+     * Return a list of version types.
+     */
     public get_game_versions_type(game: number | Game): Promise<GameVersionType[]> {
         return new Promise(async (resolve, reject) => {
             let res = await utils.get(this.API_URL + "games/" + utils.cleanse(game) + "/version-types");
@@ -128,6 +149,12 @@ export default class Curseforge {
         });
     }
 
+    /**
+     * Return a list of categories associated for a game.
+     * @param game the game id or game object.
+     * @param classId optional root category (for example. Resourcepacks, Savegames, Mods)
+     * @returns list of Categories fitting the game (and also classId)
+     */
     public get_categories(game: number | Game, classId?: number): Promise<Category[]> {
         return new Promise(async (resolve, reject) => {
             let uri = new URL(this.API_URL + "categories");

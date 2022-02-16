@@ -90,6 +90,9 @@ export type GameVersionsByType = {
     versions: string[]
 }
 
+/**
+ * the game version type (Retail / Console / etc.)
+ */
 export type GameVersionType = {
     id: number,
     gameId: number,

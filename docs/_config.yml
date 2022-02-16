@@ -1,9 +1,0 @@
-exclude: ["index.md"]
-theme: minima
-kramdown:
-   input: GFM
-
-plugins:
-   - jekyll-sitemap
-
-remote_theme: pmarsceill/just-the-docs

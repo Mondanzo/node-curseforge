@@ -1,5 +1,5 @@
 {
-  "name": "curseforge-api",
+  "name": "node-curseforge",
   "version": "1.0.0",
   "description": "A NodeJS package for the curseforge api",
   "main": "./dist/index.js",
@@ -9,12 +9,16 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build-project": "tsc",
-    "generate-docs": "api-extractor run --local && api-documenter markdown -i temp -o docs/api"
+    "generate-docs": "typedoc"
   },
   "devDependencies": {
-    "@microsoft/api-documenter": "^7.15.2",
-    "@microsoft/api-extractor": "^7.19.4",
     "@types/node": "^17.0.15",
+    "typedoc": "^0.22.11",
+    "typedoc-plugin-extras": "^2.2.3",
+    "typedoc-plugin-inline-sources": "^1.0.1",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "typedoc-plugin-rename-defaults": "^0.4.0"
   }
 }

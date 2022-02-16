@@ -17,11 +17,10 @@ export function set_option(header: string) {
 }
 
 /**
- * 
- * @param { "GET" | "POST" } method - http method to use for request.
- * @param {string} url - url to request.
- * @param { object | string | number } [body] - Optional request data to send along.
- * @returns 
+ * @hidden
+ * @param method - http method to use for request.
+ * @param url - url to request.
+ * @param body - Optional request data to send along.
  */
 function rq(method: "GET" | "POST", url: string, body?: object | string | number): AsyncRequestResponse {
     return new Promise(function (resolve, reject) {
@@ -62,14 +61,23 @@ function rq(method: "GET" | "POST", url: string, body?: object | string | number
     });
 }
 
+/**
+ * @hidden
+ */
 export function get(url: string, body?: any): AsyncRequestResponse {
     return rq("GET", url, body);
 }
 
+/**
+ * @hidden
+ */
 export function post(url: string, body?: any): AsyncRequestResponse {
     return rq("POST", url, body);
 }
 
+/**
+ * @hidden
+ */
 export function cleanse(object: CFObject & {id: number} | number): number {
     return object instanceof CFObject ? object.id : object;
 }

@@ -13,37 +13,44 @@ export default class Game extends CFObject {
 
     /**
      * The id of the game.
+     * @readonly
      */
     public readonly id: number;
 
     /**
      * The name of the game.
+     * @readonly
      */
     public readonly name: string;
 
     /**
      * The slug of the game.
      * a slug is a string identifier.
+     * @readonly
      */
     public readonly slug: string;
 
     /**
      * the Date when the game got last modified. Does not include changes in the mods.
+     * @readonly
      */
     public readonly dateModified: Date;
 
     /**
      * Assets related to the game.
+     * @readonly
      */
     public readonly assets: GameAssets;
 
     /**
      * The game status.
+     * @readonly
      */
     public readonly status: CoreStatus;
 
     /**
      * The api status for the game.
+     * @readonly
      */
     public readonly apiStatus: CoreApiStatus;
 

@@ -63,9 +63,11 @@ export default class ModFile extends CFObject {
         this.modules = data.modules;
     }
 
+    /**
+     * @hidden
+     */
     private _download(url: string | URL, path: PathLike, verify: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            console.log("Download Url:", url);
             let req = https.get(url);
             req.on("response", (res) => {
                 if(res.statusCode == 200){
@@ -105,7 +107,6 @@ export default class ModFile extends CFObject {
 
                     res.pipe(stream);
                 } else if (res.statusCode == 302) {
-                    console.log(res.headers);
                     resolve(this._download(res.headers.location, path, verify));
                 } else {
                     reject("Error! No idea what happened");
@@ -117,7 +118,7 @@ export default class ModFile extends CFObject {
     }
 
     /**
-     * Download this [[ModFile]]
+     * Download this [[ModFile]].
      * @param path The path where the file should be saved.
      * @param verify Should the downloaded files hash be checked?
      * @returns the Promise resolves with true if download was successful and the hash fits (if verify is true.) returns false otherwise.
@@ -127,6 +128,10 @@ export default class ModFile extends CFObject {
     }
 
 
+    /**
+     * Get the mod associated with this mod file.
+     * @returns the mod for this mod file.
+     */
     public get_mod(): Promise<Mod> {
         return this._client.get_mod(this.modId);
     }
