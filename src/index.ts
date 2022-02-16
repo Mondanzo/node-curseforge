@@ -58,11 +58,11 @@ export default class Curseforge {
                 try {
                  while(_game == undefined){
                         let _games = await this.get_games();
-                        _game = _games.find(g => {g.slug == game_id});
+                        _game = _games.find(g => {return g.slug == game_id});
                         if(_game){
                             resolve(_game);
                             break;
-                        } else if(_games.paging.resultCount * (_games.paging.index + 1) >= _games.paging.totalCount) {
+                        } else if(_games.paging.pageSize * (_games.paging.index + 1) >= _games.paging.totalCount) {
                             reject(new ErrorNotFound());
                             break;
                         }
