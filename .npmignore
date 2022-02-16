@@ -1,0 +1,7 @@
+src/
+docs/
+.vscode/
+tsconfig.json
+typedoc.json
+*.log
+yarn.lock
