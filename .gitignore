@@ -3,6 +3,8 @@ dist/
 temp/
 etc/
 
+*.log
+
 # User Settings
 .vscode/
 
