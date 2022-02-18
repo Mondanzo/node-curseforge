@@ -1,7 +1,9 @@
-# node-curseforge
+# node-curseforge ![npm bundle size](https://img.shields.io/bundlephobia/min/node-curseforge) ![npm](https://img.shields.io/npm/dw/node-curseforge)
 
 A zero-dependencies NodeJS package to interact with the curseforge core api.
 Requires a CFCore authentication token (get one from [console.curseforge.com/#/api-keys](https://console.curseforge.com/#/api-keys) and yes you need to use a google account to login (sadly)).
+
+### view on npm: [node-curseforge](https://www.npmjs.com/package/node-curseforge)
 
 ## Installation
 
