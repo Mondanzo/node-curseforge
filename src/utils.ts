@@ -48,6 +48,8 @@ function rq(method: "GET" | "POST", url: string, body?: object | string | number
             let data = "";
             res.on("data", (chunk) => {data += chunk});
             res.on("end", () => {
+                if(data == "" || data == undefined) resolve({"code": res.statusCode})
+                else 
                 resolve({
                     "code": res.statusCode,
                     "data": JSON.parse(data)
