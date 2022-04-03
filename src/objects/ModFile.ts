@@ -24,7 +24,7 @@ export default class ModFile extends CFObject {
     public readonly fileLength: bigint;
     public readonly downloadCount: bigint;
     public readonly downloadUrl: string;
-    public readonly gameVersion: string[];
+    public readonly gameVersions: string[];
     public readonly sortableGameVersions: SortableGameVersion[];
     public readonly dependencies: FileDependency[];
     public readonly exposeAsAlternative: boolean | null;
@@ -51,7 +51,7 @@ export default class ModFile extends CFObject {
         this.fileLength = data.fileLength;
         this.downloadCount = data.downloadCount;
         this.downloadUrl = data.downloadUrl;
-        this.gameVersion = data.gameVersion;
+        this.gameVersions = data.gameVersions;
         this.sortableGameVersions = data.sortableGameVersions;
         this.dependencies = data.dependencies;
         this.exposeAsAlternative = data.exposeAsAlternative;
