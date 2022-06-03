@@ -9,6 +9,9 @@ export type GameAssets = {
 
 export type Pagination = {
     index: number,
+    /** 
+     * Maximum allowed PageSize is 50.
+     */
     pageSize: number,
     resultCount: number,
     totalCount: number

@@ -77,14 +77,14 @@ export default class Curseforge {
     /**
      * Get multiple available games.
      * @param index Optional index to use for paging.
-     * @param pageSize Size to show per page.
+     * @param pageSize Size to show per page. Maximum is 50.
      * @returns A Promise with a paging property filled with the Pagination.
      */
     public get_games(index?: number, pageSize?: number): Promise<Game[] & {paging: Pagination}> {
         return new Promise(async (resolve, reject) => {
             let url = new URL(this.API_URL + "games");
             if(index) url.searchParams.set("index", index.toString());
-            if(pageSize) url.searchParams.set("pageSize", pageSize.toString());
+            if(pageSize) url.searchParams.set("pageSize", Math.max(pageSize, 50).toString());
             let res = await utils.get(url.href);
 
             switch(res.code){
