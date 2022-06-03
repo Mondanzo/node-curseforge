@@ -9,7 +9,7 @@ export {Game, Mod, Category, ModFile, types as Types, exceptions as Exceptions, 
 /**
  * the default exported class of the package.
  */
-export default class Curseforge {
+class Curseforge {
 
     /**
      * @ignore
@@ -445,3 +445,6 @@ export default class Curseforge {
         this.set_token(token);
     }
 }
+
+export default Curseforge;
+export {Curseforge};
