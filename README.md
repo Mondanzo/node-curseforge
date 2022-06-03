@@ -25,7 +25,7 @@ You can use this package mostly in two ways. Either you fetch a game first and i
 
 ```javascript
 
-const Curseforge = require("node-curseforge");
+const {Curseforge} = require("node-curseforge");
 
 let cf = new Curseforge(cf_token);
 
@@ -49,7 +49,7 @@ Using the methods on the objects themselves actually calls them using the cursef
 
 ```javascript
 
-const Curseforge = require("node-curseforge")
+const {Curseforge} = require("node-curseforge")
 
 let cf = new Curseforge(cf_token);
 
