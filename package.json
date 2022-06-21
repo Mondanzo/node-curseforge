@@ -14,7 +14,8 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build-project": "tsc",
-    "generate-docs": "typedoc"
+    "generate-docs": "typedoc",
+    "test": "echo Here would be tests, if there were any."
   },
   "devDependencies": {
     "@types/node": "^17.0.15",

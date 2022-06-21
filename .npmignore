@@ -1,7 +1,9 @@
 src/
 docs/
 .vscode/
+.github/
 tsconfig.json
 typedoc.json
 *.log
 yarn.lock
+package-lock.json
