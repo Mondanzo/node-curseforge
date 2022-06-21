@@ -3,6 +3,7 @@ import * as utils from "./utils";
 import { URL } from "url";
 import { ErrorBadRequest, ErrorInternalServer, ErrorNotFound } from "./objects/exceptions";
 import { FingerprintFuzzyMatch, FingerprintMatchResult, FolderFingerprints, GameVersionsByType, GameVersionType, Pagination, PagingOptions, SearchOptions } from "./objects/types";
+import { ModLoaderType } from "./objects/enums";
 
 export {Game, Mod, Category, ModFile, types as Types, exceptions as Exceptions, enums as Enums};
 
@@ -335,11 +336,13 @@ class Curseforge {
         });
     }
 
-    public get_files(mod: Mod | number, searchOptions?: {gameVersionTypeId?: number} & PagingOptions): Promise<ModFile[] & {"paging": Pagination}> {
+    public get_files(mod: Mod | number, searchOptions?: {gameVersion?: string, modLoaderType?: ModLoaderType | number, gameVersionTypeId?: number} & PagingOptions): Promise<ModFile[] & {"paging": Pagination}> {
         return new Promise(async (resolve, reject) => {
             let uri = new URL(this.API_URL + "mods/" + utils.cleanse(mod) + "/files");
 
             if(searchOptions){
+                if(searchOptions.gameVersion) uri.searchParams.set("gameVersion", searchOptions.gameVersion);
+                if(searchOptions.modLoaderType) uri.searchParams.set("modLoaderType", searchOptions.modLoaderType.toString())
                 if(searchOptions.gameVersionTypeId) uri.searchParams.set("gameVersionTypeId", searchOptions.gameVersionTypeId.toString());
                 if(searchOptions.index) uri.searchParams.set("index", searchOptions.index.toString());
                 if(searchOptions.pageSize) uri.searchParams.set("pageSize", searchOptions.pageSize.toString());
