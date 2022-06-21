@@ -1,6 +1,6 @@
 import { Category, ModFile } from ".";
 import Curseforge from "..";
-import { ModStatus } from "./enums";
+import { ModLoaderType, ModStatus } from "./enums";
 import { CFObject } from "./interfaces";
 import { FileIndex, ModAsset, ModAuthor, ModLinks, Pagination, PagingOptions } from "./types";
 
@@ -144,7 +144,7 @@ export default class Mod extends CFObject {
      * @param searchOptions Options to use when getting the files for this mod.
      * @returns mod files found using this method.
      */
-    public get_files(searchOptions?: {gameVersionTypeId?: number} & PagingOptions): Promise<ModFile[] & {"paging": Pagination}> {
+    public get_files(searchOptions?: {gameVersion?: string, modLoaderType?: ModLoaderType | number, gameVersionTypeId?: number} & PagingOptions): Promise<ModFile[] & {"paging": Pagination}> {
         return this._client.get_files(this.id, searchOptions);
     }
 
