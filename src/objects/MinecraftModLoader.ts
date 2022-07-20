@@ -39,7 +39,8 @@ export default class MinecraftModLoader extends CFObject {
         this.recommended = data.recommended;
         this.dateModified = new Date(data.dateModified);
         this.type = data.type;
-        this.downloadUrl = data.downloadUrl;
+        // The official Curseforge API only return a downloadUrl for a Dummy file
+        this.downloadUrl = `https://maven.minecraftforge.net/net/minecraftforge/forge/${data.minecraftVersion}-${data.forgeVersion}/forge-${data.minecraftVersion}-${data.forgeVersion}-installer.jar` || data.downloadUrl;
         this.filename = data.filename;
         this.installMethod = data.installMethod;
         this.approved = data.approved;
