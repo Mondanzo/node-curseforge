@@ -6,5 +6,7 @@ import Game from "./Game";
 import ModFile from "./ModFile";
 import Mod from "./Mod";
 import Category from "./Category";
+import MinecraftModLoader from "./MinecraftModLoader";
+import MinecraftVersion from "./MinecraftVersion";
 
-export {Game, ModFile, Mod, Category, types, enums, exceptions}
+export {Game, ModFile, Mod, Category, types, enums, exceptions, MinecraftModLoader, MinecraftVersion};
