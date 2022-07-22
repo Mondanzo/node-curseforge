@@ -1,6 +1,6 @@
 {
   "name": "node-curseforge",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A NodeJS package for the curseforge api",
   "keywords": [
     "curseforge",
