@@ -9,3 +9,5 @@ etc/
 .vscode/
 
 *.user.config
+
+yarn.lock

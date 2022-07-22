@@ -18,6 +18,23 @@ export enum FileReleaseType {
     ALPHA = 3
 }
 
+export enum GameVersionStatus {
+    APPROVED = 1,
+    DELETED = 2,
+    NEW = 3,
+}
+
+export enum GameVersionTypeStatus {
+    NORMAL = 1,
+    DELETED = 2,
+}
+
+export enum ModLoaderInstallMethod {
+    FORGE_INSTALLER = 1,
+    FORGE_JAR_INSTALL = 2,
+    FORGE_INSTALLER_V2 = 3
+}
+
 export enum FileStatus {
     PROCESSING = 1,
     CHANGES_REQUIRED = 2,

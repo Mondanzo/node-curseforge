@@ -1,4 +1,4 @@
-import {Game, Mod, Category, ModFile, types, exceptions, enums} from "./objects";
+import {Game, Mod, Category, ModFile, types, exceptions, enums, MinecraftModLoader, MinecraftVersion} from "./objects";
 import * as utils from "./utils";
 import { URL } from "url";
 import { ErrorBadRequest, ErrorInternalServer, ErrorNotFound } from "./objects/exceptions";
@@ -428,6 +428,74 @@ class Curseforge {
             switch(res.code) {
                 case 200:
                     resolve(res.data.data.fuzzyMatches);
+                    break;
+                case 400:
+                    reject(new ErrorBadRequest());
+                    break;
+                case 500:
+                    reject(new ErrorNotFound());
+                    break;
+            }
+        });
+    }
+
+    public get_minecraft_versions(): Promise<MinecraftVersion[]> {
+        return new Promise(async (resolve, reject) => {
+            let res = await utils.get(this.API_URL + "minecraft/version");
+            switch(res.code) {
+                case 200:
+                    resolve(res.data.data.map(version => new MinecraftVersion(this, version)));
+                    break;
+                case 400:
+                    reject(new ErrorBadRequest());
+                    break;
+                case 500:
+                    reject(new ErrorNotFound());
+                    break;
+            }
+        });
+    }
+
+    public get_minecraft_version(version: MinecraftVersion|number): Promise<MinecraftVersion> {
+        return new Promise(async (resolve, reject) => {
+            let res = await utils.get(this.API_URL + "minecraft/version/" + utils.cleanse(version));
+            switch(res.code) {
+                case 200:
+                    resolve(new MinecraftVersion(this, res.data.data));
+                    break;
+                case 400:
+                    reject(new ErrorBadRequest());
+                    break;
+                case 500:
+                    reject(new ErrorNotFound());
+                    break;
+            }
+        });
+    }
+
+    public get_minecraft_modloaders(): Promise<MinecraftModLoader[]> {
+        return new Promise(async (resolve, reject) => {
+            let res = await utils.get(this.API_URL + "minecraft/modloader");
+            switch(res.code) {
+                case 200:
+                    resolve(res.data.data.map(modloader => new MinecraftModLoader(this, modloader)));
+                    break;
+                case 400:
+                    reject(new ErrorBadRequest());
+                    break;
+                case 500:
+                    reject(new ErrorNotFound());
+                    break;
+            }
+        });
+    }
+
+    public get_minecraft_modloader(modloader: string): Promise<MinecraftModLoader> {
+        return new Promise(async (resolve, reject) => {
+            let res = await utils.get(this.API_URL + "minecraft/modloader/" + modloader);
+            switch(res.code) {
+                case 200:
+                    resolve(new MinecraftModLoader(this, res.data.data));
                     break;
                 case 400:
                     reject(new ErrorBadRequest());
