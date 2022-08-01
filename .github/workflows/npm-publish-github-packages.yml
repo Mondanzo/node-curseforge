@@ -4,22 +4,12 @@
 name: Node.js Package [Github Packages]
 
 on:
+  workflow_dispatch:
   release:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,8 +19,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
+      - run: npm config set //npm.pkg.github.com/:_authToken $TOKEN
       - run: npm ci
+      - run: npm run build-project
+      - run: npm test
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
