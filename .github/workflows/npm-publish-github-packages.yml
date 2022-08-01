@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm config set //npm.pkg.github.com/:_authToken $AUTH_TOKEN
+      - run: npm config set https://npm.pkg.github.com/:_authToken $AUTH_TOKEN
       - run: npm ci
       - run: npm run build-project
       - run: npm test
