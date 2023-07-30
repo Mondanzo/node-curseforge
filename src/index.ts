@@ -244,11 +244,9 @@ class Curseforge {
         });
     }
 
-    public get_mods(mod: number, ...mods: number[]): Promise<Mod[]> {
+    public get_mods(...mods: number[]): Promise<Mod[]> {
         return new Promise(async (resolve, reject) => {
-        	mods.push(mod);
-
-            let res = await utils.get(this.API_URL + "mods", {modIds: mods});
+            let res = await utils.post(this.API_URL + "mods", {modIds: mods});
             switch(res.code){
                 case 200:
                     let mods = [];

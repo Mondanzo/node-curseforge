@@ -9,7 +9,8 @@
         "outDir": "dist",
         "emitDeclarationOnly": false,
         "declaration": true,
-        "declarationMap": true
+        "declarationMap": true,
+        "sourceRoot": "src"
     },
     "include": ["src/**/*"]
 }
