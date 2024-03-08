@@ -369,7 +369,7 @@ class Curseforge {
 
     public get_file_changelog(mod: Mod | number, file: ModFile | number): Promise<string> {
         return new Promise(async (resolve, reject) => {
-            let res = await utils.get(this.API_URL + "mods/" + utils.cleanse(mod) + "/files/" + utils.cleanse(file));
+            let res = await utils.get(this.API_URL + "mods/" + utils.cleanse(mod) + "/files/" + utils.cleanse(file) + "/changelog");
             switch(res.code){
                 case 200:
                     resolve(res.data.data);
