@@ -131,7 +131,7 @@ export default class Mod extends CFObject {
         this.logo = data.logo;
         this.thumbnails = data.thumbnails;
         this.mainFileId = data.mainFileId;
-        this.latestFiles = data.latestFiles;
+        this.latestFiles = data.latestFiles.map((file: any) => new ModFile(_client, file));
         this.latestFilesIndexes = data.latestFilesIndexes;
         this.dateCreated = new Date(data.dateCreated);
         this.dateModified = new Date(data.dateModified);

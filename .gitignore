@@ -8,6 +8,9 @@ etc/
 # User Settings
 .vscode/
 
+# jetbrains files
+.idea
+
 *.user.config
 
 yarn.lock
